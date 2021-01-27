@@ -1,17 +1,19 @@
-import './App.css';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from './components/navi/navBar.js'
 import Routes from './Pages/routes'
 
+
 function App() {
-  return (
-    <div className="App">
+
+    return (
+      <div className="App">
+        <NavBar/>
         <Router>
-            <NavBar/>
-            <Routes/>
+          <Routes/>
         </Router>
-    </div>
-  ) //Return
+      </div>
+    ) //Return
 } //App
 
-export default App;
+export default App
