@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from './components/navi/navBar.js'
-import Routes from './components/navi/routes'
+import Routes from './Pages/routes'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
             <Routes/>
         </Router>
     </div>
-  );
-}
+  ) //Return
+} //App
 
 export default App;

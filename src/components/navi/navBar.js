@@ -15,7 +15,7 @@ export const NavBar = ()  => {
                 </ul>
             </nav>
         </div>
-    )
-}
+    ) //Return
+} //NavBar
 
 export default NavBar
