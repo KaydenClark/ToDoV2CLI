@@ -1,11 +1,6 @@
 import React from 'react'
 import ListTitles from '../../components/lists/lists'
-import axios from 'axios'
-import {
-    baseProd
-}  from '../../components/const'
 
-const api = `${baseProd}/lists`
 
 class ToDoPage extends React.Component {
     constructor(props){
@@ -14,26 +9,6 @@ class ToDoPage extends React.Component {
             titles: []
         } //  state
     }  //constructor
-
-    getListTitlesAxios = async () => {
-        console.log('Connected for reading list titles')
-        const [listTitles] = await Promise.all([
-            axios.get(api)
-        ])
-        this.renderListTitles(listTitles)
-    }
-
-    renderListTitles  =  async (listTitles) => {
-        const titles = await listTitles.map((title)  =>
-            <ListTitles
-                title= {title}
-            />)
-        console.log(titles)
-    }
-
-    componentDidMount =  async () => {
-        // await this.getListTitlesAxios()
-    }
 
     render() {
         return (

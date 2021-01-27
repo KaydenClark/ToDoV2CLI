@@ -11,9 +11,6 @@ import {
         <div>
             <Switch>
                 <Route exact path= '/'>
-                    {/* <YOURFUNCTIONHERE/> */}
-                </Route>
-                <Route exact path= '/ToDo'>
                     <ToDoPage/>
                 </Route>
             </Switch>

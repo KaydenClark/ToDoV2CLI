@@ -60,7 +60,8 @@ export const NavBar = ()  => {
               <MenuItem onClick={handleClose}>Back</MenuItem>
             </Menu>
             <Typography 
-            variant="h6" 
+            variant="h6"
+            size= 'Large' 
             className={classes.title}>
               To Do List
             </Typography>
