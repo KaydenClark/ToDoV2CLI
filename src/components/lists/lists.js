@@ -1,4 +1,5 @@
 import React from 'react'
+import RenderListTitle from '../../components/lists/list'
 import axios from 'axios'
 import {
     // baseProd,
@@ -21,28 +22,30 @@ class ListTitles extends React.Component  {
         const [listTitles] = await Promise.all([
             axios.get(api)
         ])
-        this.renderListTitles(listTitles.data.data)
-        // console.log(listTitles)
+        this.state.titles.push(listTitles.data.data)
+        
     }
 
-    renderListTitles  =  async (listTitles) => {
+    renderListTitle = () => {
+        const listTitles = this.state.titles
+        const listTitle = <RenderListTitle title={listTitles[0]} />
         console.log(listTitles)
-        const titles = await listTitles.map((title)  =>
-            <ListTitles title={title}/>
-            // console.log(title)
-            )
-        return titles
+        console.log(listTitle)
+        // console.log(this.state.titles)
     }
 
-    componentDidMount =  async () => {
+    componentDidMount = async () => {
         await this.getListTitlesAxios()
+        await this.renderListTitle()
     }
 
     render(){
         return(
             <div>
                 <ul>
-                    {this.state.titles}
+                    <li>
+                    <RenderListTitle title=  {this.state.titles[0]}/>
+                    </li>
                 </ul>
             </div>
         )  //Return
