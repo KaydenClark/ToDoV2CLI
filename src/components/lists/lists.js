@@ -26,20 +26,25 @@ class ListTitles extends React.Component  {
         res.map(title =>
             this.state.titles.push(title[0].title) 
         )
-        // console.log(this.state.titles)       
+        // console.log(this.state.titles)
+        // console.log(this.props)       
         // console.log(<RenderListTitle title= {this.state.titles}/>)
     }
 
     renderListTitle = () => {
         const titlesList = this.state.titles.map(title => 
-            <RenderListTitle key = {Date.now()} title= {title}/>)
+            <RenderListTitle 
+            key = {Date.now()} 
+            title= {title}
+            getTitles= {this.getListTitlesAxios}/>)
         // console.log(titlesList)
         return titlesList
     }
 
     componentDidMount = async () => {
         await this.getListTitlesAxios()
-        console.log(this.renderListTitle())
+        this.renderListTitle()
+        // console.log(this.renderListTitle())
     }
 
     render(){
